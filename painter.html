@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinturería Interactiva</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .living-container {
+            position: relative;
+            display: inline-block;
+        }
+        .living {
+            width: 500px;
+            display: block;
+        }
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0); /* Color predeterminado */
+            mix-blend-mode: multiply; 
+            pointer-events: none;
+        }
+        .mask img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8; /* Ajusta la opacidad */
+        }
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colores por fila */
+            gap: 5px; /* Reduce el espacio entre los colores */
+            justify-content: center;
+            margin-top: 20px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .color-box {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        .color-box div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seleccioná un color y visualizá cómo quedaría</h2>
+
+    <div class="container"> <!-- Contenedor donde está la imágen + la mask -->
+        <div class="living-container">
+            <img src="living.jpg" alt="Living" class="living">
+            <div class="mask">
+                <img src="mask.png" alt="Máscara de pared">
+            </div>
+        </div>
+    </div>
+
+    <div class="palette"> <!-- Paletas de colores -->
+        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
+        <div class="color-box" data-color="#7E60BF"><div style="background-color: #7E60BF;"></div></div>
+        <div class="color-box" data-color="#F4CCE9"><div style="background-color: #F4CCE9;"></div></div>
+        <div class="color-box" data-color="#FFE1FF"><div style="background-color: #FFE1FF;"></div></div>
+        <div class="color-box" data-color="#2C3930"><div style="background-color: #2C3930;"></div></div>
+        <div class="color-box" data-color="#3F4F44"><div style="background-color: #3F4F44;"></div></div>
+        <div class="color-box" data-color="#A27B5C"><div style="background-color: #A27B5C;"></div></div>
+        <div class="color-box" data-color="#DCD7C9"><div style="background-color: #DCD7C9;"></div></div>
+        <div class="color-box" data-color="#56021F"><div style="background-color: #56021F;"></div></div>
+        <div class="color-box" data-color="#7D1C4A"><div style="background-color: #7D1C4A;"></div></div>
+        <div class="color-box" data-color="#D17D98"><div style="background-color: #D17D98;"></div></div>
+        <div class="color-box" data-color="#F4CCE9"><div style="background-color: #F4CCE9;"></div></div>
+        <div class="color-box" data-color="#3D8D7A"><div style="background-color: #3D8D7A;"></div></div>
+        <div class="color-box" data-color="#B3D8A8"><div style="background-color: #B3D8A8;"></div></div>
+        <div class="color-box" data-color="#FBFFE4"><div style="background-color: #FBFFE4;"></div></div>
+        <div class="color-box" data-color="#FBFFE4"><div style="background-color: #FBFFE4;"></div></div>
+        <div class="color-box" data-color="#A3D1C6"><div style="background-color: #A3D1C6;"></div></div>
+        <div class="color-box" data-color="#FF1493"><div style="background-color: #FF1493;"></div></div>
+        <div class="color-box" data-color="#ADFF2F"><div style="background-color: #ADFF2F;"></div></div>
+        <div class="color-box" data-color="#4169E1"><div style="background-color: #4169E1;"></div></div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".color-box").forEach(box => {
+            box.addEventListener("click", function() {
+                let selectedColor = this.getAttribute("data-color");
+                document.querySelector(".mask").style.backgroundColor = selectedColor;
+            });
+        });
+    </script>
+
+</body>
+</html>
