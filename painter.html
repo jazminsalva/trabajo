@@ -35,7 +35,18 @@
             height: auto;
             opacity: 0.8; /* Ajusta la opacidad */
         }
-        .color-palette.palette {
+
+        .p-base {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr); /* 9 colores por fila */
+            gap: 5px;
+            justify-content: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .palette {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* 4 colores por fila */
             gap: 5px; /* Reduce el espacio entre los colores */
@@ -78,16 +89,22 @@
 
     <h3>Paleta cromática</h3>
 
-    <div class="color-palette"> <!-- Paletas de colores base -->
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
-        <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
+    <div class="p-base"> <!-- Paletas de colores base -->
+        <div class="color-box" data-color="#FF2700"><div style="background-color: #FF2700;"></div></div>
+        <div class="color-box" data-color="#FD6110"><div style="background-color: #FD6110;"></div></div>
+        <div class="color-box" data-color="#F6A121"><div style="background-color: #F6A121;"></div></div>
+        <div class="color-box" data-color="#FEC311"><div style="background-color: #FEC311;"></div></div>
+        <div class="color-box" data-color="#FFED00"><div style="background-color: #FFED00;"></div></div>
+        <div class="color-box" data-color="#7FD100"><div style="background-color: #7FD100;"></div></div>
+        <div class="color-box" data-color="#00B601"><div style="background-color: #00B601;"></div></div>
+        <div class="color-box" data-color="#02C3B0"><div style="background-color: #02C3B0;"></div></div>
+        <div class="color-box" data-color="#006FC4"><div style="background-color: #006FC4;"></div></div>
+        <div class="color-box" data-color="#3C49BB"><div style="background-color: #3C49BB;"></div></div>
+        <div class="color-box" data-color="#7521B3"><div style="background-color: #7521B3;"></div></div>
+        <div class="color-box" data-color="#D32A91"><div style="background-color: #D32A91;"></div></div>
     </div>
-
-    <div class="palette"> <!-- Paletas de colores -->
+<!--
+    <div class="palette">  Paletas de colores 
         <div class="color-box" data-color="#433878"><div style="background-color: #433878;"></div></div>
         <div class="color-box" data-color="#7E60BF"><div style="background-color: #7E60BF;"></div></div>
         <div class="color-box" data-color="#F4CCE9"><div style="background-color: #F4CCE9;"></div></div>
@@ -108,7 +125,7 @@
         <div class="color-box" data-color="#FF1493"><div style="background-color: #FF1493;"></div></div>
         <div class="color-box" data-color="#ADFF2F"><div style="background-color: #ADFF2F;"></div></div>
         <div class="color-box" data-color="#4169E1"><div style="background-color: #4169E1;"></div></div>
-    </div>
+    </div> -->
 
     <script>
         document.querySelectorAll(".color-box").forEach(box => {
